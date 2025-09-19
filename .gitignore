@@ -1,0 +1,47 @@
+# Byte-compiled / cache
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.pkl
+
+# Virtual environments
+venv/
+.env
+*.env
+
+# Distribution / packaging
+*.egg
+*.egg-info/
+dist/
+build/
+eggs/
+parts/
+wheels/
+*.manifest
+*.spec
+
+# Logs
+*.log
+*.out
+*.err
+
+# IDEs
+.vscode/
+.idea/
+
+# Docker
+*.pid
+*.sock
+docker-compose.override.yml
+.docker/
+
+# Alembic migrations (if you ever add later)
+alembic/versions/*.py
+
+# Coverage / test
+htmlcov/
+.tox/
+.coverage
+.cache/
+.pytest_cache/
