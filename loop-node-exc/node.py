@@ -46,11 +46,11 @@ def check_update_bound(state:AgentState):
 
 def update_lower_node(state:AgentState):
     """this will update the lower bound"""
-    state["lower"] = state["guess"][-1]
+    state["lower"] = state["guess"][-1] + 1
     return state
 
 def update_upper_node(state:AgentState):
     """this will update upper bound"""
-    state["upper"] = state["guess"][-1]
+    state["upper"] = state["guess"][-1] - 1
     return state
 
