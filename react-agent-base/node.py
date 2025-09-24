@@ -28,10 +28,11 @@ llm  = ChatGoogleGenerativeAI(model="gemini-2.5-flash").bind_tools(tools)
 
 def llm_node(state:AgentState):
     """this node function can use tools as well as can solve the other user requets."""
-    system_prompt = SystemMessage(content=""""You are a helpful assistant. 
-    IMPORTANT: When users ask you to perform mathematical operations like addition, 
-    you MUST use the available tools. Do NOT calculate manually. 
-    Always use the 'add' tool for addition operations.""")
-    response = llm.invoke([system_prompt] + state["messages"])
+    # system_prompt = SystemMessage(content=""""You are a helpful assistant. 
+    # IMPORTANT: When users ask you to perform mathematical operations like addition, 
+    # you MUST use the available tools. Do NOT calculate manually. 
+    # Always use the 'add' tool for addition operations.""")
+    # response = llm.invoke([system_prompt] + state["messages"])
+    response = llm.invoke(state["messages"])
     return {"messages": [response]}
  
