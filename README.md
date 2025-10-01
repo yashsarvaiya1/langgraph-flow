@@ -18,6 +18,7 @@ The project is organized into several modules, each demonstrating different patt
 - `human-loop-llm/`: Human-in-the-loop pattern with LLM integration
 - `draft-sub-agent/`: Sub-agent pattern for document drafting
 - `react-agent-base/`: ReAct pattern implementation for agents
+- `rag-agent/`: Retrieval-Augmented Generation (RAG) implementation with vector store
 
 ## Prerequisites
 
@@ -36,12 +37,15 @@ Main dependencies:
 - python-dotenv: For environment variable management
 - pydantic: For data validation
 - grandalf: For graph visualization
+- langchain-text-splitters: For document chunking
+- langchain-community: For document loading
+- Google Generative AI: For embeddings and LLM
 
 ## Setup
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/yourusername/langgraph-flow.git
+git clone https://github.com/yashsarvaiya1/langgraph-flow.git
 cd langgraph-flow
 ```
 
@@ -113,6 +117,21 @@ Shows how to integrate human interaction into your LLM-based workflows, useful f
 
 ### Draft Sub-Agent
 Demonstrates the sub-agent pattern, where a specialized agent is used for specific tasks (in this case, document drafting).
+
+### RAG Agent
+Implements Retrieval-Augmented Generation (RAG) pattern using vector store for document storage and retrieval. Features include:
+- PDF document loading and chunking
+- Vector embeddings using Google's text-embedding-004 model
+- In-memory vector store for similarity search
+- Smart retrieval tool for context-aware responses
+
+To use the RAG agent:
+1. Place your PDF documents in the `rag-agent/documents` folder
+2. Run the agent:
+```bash
+python -m rag-agent.agent
+```
+The agent will process the documents and respond to queries using relevant document context.
 
 ### React Agent Base
 Implementation of the ReAct (Reasoning and Acting) pattern, showing how to build more sophisticated agents that can reason about their actions.
