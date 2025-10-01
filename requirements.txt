@@ -4,3 +4,5 @@ langchain[google-genai]
 langchain-tavily
 pydantic
 grandalf
+langchain-community
+pypdf
