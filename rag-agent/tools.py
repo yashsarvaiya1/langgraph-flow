@@ -9,7 +9,7 @@ vector_store = create_embeddings()
 
 @tool
 def smart_retrieve(query: str, tool_call_id: Annotated[str, InjectedToolCallId]):
-    """If user asks anything related to the Docker use this tool for returning the information"""
+    """If user asks anything related to document or something specific use this tool for returning the information"""
 
     docs = vector_store.similarity_search(query, k=4)
 

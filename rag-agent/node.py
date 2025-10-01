@@ -10,7 +10,7 @@ llm  = ChatGoogleGenerativeAI(model="gemini-2.5-flash").bind_tools(tools)
 tools_node = ToolNode(tools)
 
 def llm_node(state:RagState):
-    """you are helpful assistant and will help user with every task, for docker related task use the tool."""
+    """you are helpful assistant and will help user with every task, for specific task use the tool."""
 
     response = llm.invoke(state["messages"])
     return {"messages":[response]}
